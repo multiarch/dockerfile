@@ -1,11 +1,10 @@
-FROM multiarch/ubuntu-debootstrap:amd64-wily       # arch=amd64
-#FROM multiarch/ubuntu-debootstrap:armhf-wily      # arch=armhf
-#FROM multiarch/ubuntu-debootstrap:powerpc-wily    # arch=powerpc
-ARG ARCH=amd64					   # arch=amd64
-#ARG ARCH=armhf					   # arch=armhf
-#ARG ARCH=powerpc				   # arch=powerpc
+FROM multiarch/ubuntu-debootstrap:amd64-wily
+#FROM multiarch/ubuntu-debootstrap:armhf-wily   # arch=armhf
+#FROM multiarch/ubuntu-debootstrap:powerpc-wily # arch=powerpc
+ARG ARCH=amd64
 
-RUN apt-get update && apt-get install --no-install-recommends -y -q wget
+RUN apt-get update \
+ && apt-get install --no-install-recommends -y -q wget
 
 RUN echo "I'm ${ARCH}"
 
@@ -23,7 +22,8 @@ RUN case "${ARCH}" in                        \
         echo "This is the default"           \
       ;;                                     \
       esac
-    
+   
+
 ADD overlay-common      /overlay
 ADD overlay-${ARCH}   /overlay
 

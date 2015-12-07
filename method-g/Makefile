@@ -3,18 +3,11 @@ ARCHS ?= amd64 armhf powerpc
 BASE_ARCH ?= amd64
 
 
-build:
-	docker build --build-arg ARCH=$(TARGET) --no-cache -t multiarch-dockerfile:$(TARGET)-methodf .
-	docker run --rm multiarch-dockerfile:$(TARGET)-methodf uname -a
-	docker run --rm multiarch-dockerfile:$(TARGET)-methodf ls -la /usr/bin/wget
-	docker run --rm multiarch-dockerfile:$(TARGET)-methodf ls -la /overlay
-
-
 build: tmp-$(TARGET)/Dockerfile
-	docker build --build-arg ARCH=$(TARGET) --no-cache -t multiarch-dockerfile:$(TARGET)-methode tmp-$(TARGET)
-	docker run --rm multiarch-dockerfile:$(TARGET)-methode uname -a
-	docker run --rm multiarch-dockerfile:$(TARGET)-methode ls -la /usr/bin/wget
-	docker run --rm multiarch-dockerfile:$(TARGET)-methode ls -la /overlay
+	docker build --build-arg ARCH=$(TARGET) --no-cache -t multiarch-dockerfile:$(TARGET)-methodg tmp-$(TARGET)
+	docker run --rm multiarch-dockerfile:$(TARGET)-methodg uname -a
+	docker run --rm multiarch-dockerfile:$(TARGET)-methodg ls -la /usr/bin/wget
+	docker run --rm multiarch-dockerfile:$(TARGET)-methodg ls -la /overlay
 
 
 tmp-$(TARGET)/Dockerfile: Dockerfile $(shell find overlay-common overlay-$(TARGET))
