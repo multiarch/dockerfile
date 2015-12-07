@@ -56,16 +56,28 @@ Pros
 Cons
 * Need to copy the whole workspace for each arch on build (take more disk space)
 * Bad multiline support
-* 
+
 ---
 
 ## method F
 
 Pros
 * Unique `Dockerfile`, uses the new `docker build --build-arg` argument
+* Lightest solution, no Makefile needed
 * Good multiline support
 * Disk-space friendly
 * The `Dockerfile` works out of the box without the Makefile
 
 Cons
 * Actually, the dynamic FROM does not work :(
+
+---
+
+## method G
+
+Pros
+* Unique `Dockerfile`, uses the new `docker build --build-arg` argument + a `Makefile` for the dynamic `FROM`
+* Good multiline support
+
+Cons
+* Requires a Makefile for non amd64 targets
