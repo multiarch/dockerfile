@@ -1,0 +1,10 @@
+FROM multiarch/ubuntu-debootstrap:armhf-wily      
+
+RUN apt-get update && apt-get install --no-install-recommends -y -q wget
+
+RUN echo "I'm armhf"                              
+
+ADD overlay-common  /overlay
+ADD overlay-armhf   /overlay                      
+
+CMD ["uname -a; cowsay hello world"]

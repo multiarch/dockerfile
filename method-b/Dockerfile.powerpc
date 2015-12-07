@@ -1,0 +1,10 @@
+FROM multiarch/ubuntu-debootstrap:powerpc-wily      
+
+RUN apt-get update && apt-get install --no-install-recommends -y -q wget
+
+RUN echo "I'm powerpc"                              
+
+ADD overlay-common    /overlay
+ADD overlay-powerpc   /overlay                      
+
+CMD ["uname -a; cowsay hello world"]
