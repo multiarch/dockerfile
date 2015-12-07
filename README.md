@@ -5,6 +5,7 @@ Multiarch Dockerfile POC
 
 Pros
 * Unique Dockerfile
+* Gentle about disk usage
 
 Cons
 * Don't work out of the box (`docker build` without `Makefile`)
@@ -14,6 +15,13 @@ Cons
 ---
 
 ## method B
+
+Pros
+* Dockerfiles are easy to read (one Dockerfile for one architecture, without `sed` at build-time)
+* Gentle about disk usage
+
+Cons
+* Multiple Dockerfiles, harder to apply a common change
 
 ---
 
