@@ -9,8 +9,8 @@ RUN echo "I'm arhmf"                              # arch=armhf
 RUN echo "I'm powerpc"                            # arch=powerpc
 
 ADD overlay-common  /overlay
-ADD overlay-amd64   /overlay-amd64                # arch=amd64
-ADD overlay-armhf   /overlay-armhf                # arch=armhf
-ADD overlay-powerpc /overlay-powerpc              # arch=powerpc
+ADD overlay-amd64   /overlay                      # arch=amd64
+ADD overlay-armhf   /overlay                      # arch=armhf
+ADD overlay-powerpc /overlay                      # arch=powerpc
 
 CMD ["uname -a; cowsay hello world"]

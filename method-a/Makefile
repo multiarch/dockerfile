@@ -6,6 +6,7 @@ build: Dockerfile
 	docker build --no-cache -t multiarch-dockerfile:$(TARGET)-methoda .
 	docker run --rm multiarch-dockerfile:$(TARGET)-methoda uname -a
 	docker run --rm multiarch-dockerfile:$(TARGET)-methoda ls -la /usr/bin/wget
+	docker run --rm multiarch-dockerfile:$(TARGET)-methoda ls -la /overlay
 
 
 .PHONY: Dockerfile
