@@ -7,7 +7,7 @@ for arch in amd64 armhf powerpc; do                     \
           fi;                                        \
         done
 sed -i 's/#[[:space:]]*arch=amd64//g' Dockerfile
-cat Dockerfile
+$ cat Dockerfile
 FROM multiarch/ubuntu-debootstrap:amd64-wily
 
 RUN apt-get update && apt-get install --no-install-recommends -y -q wget
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y -q wget
 RUN echo "I'm amd64"
 
 CMD ["uname -a; cowsay hello world"]
-docker build --no-cache -t multiarch-dockerfile:amd64-methoda .
+$ docker build --no-cache -t multiarch-dockerfile:amd64-methoda .
 Sending build context to Docker daemon 6.656 kB
 Step 1 : FROM multiarch/ubuntu-debootstrap:amd64-wily
  ---> 0fdd22782955
@@ -46,9 +46,9 @@ Step 4 : CMD uname -a; cowsay hello world
  ---> eeeb6f0dd331
 Removing intermediate container 873723f8f1a0
 Successfully built eeeb6f0dd331
-docker run --rm multiarch-dockerfile:amd64-methoda uname -a
+$ docker run --rm multiarch-dockerfile:amd64-methoda uname -a
 Linux 911ae85210c7 3.13.0-36-generic #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
-docker run --rm multiarch-dockerfile:amd64-methoda ls -la /usr/bin/wget
+$ docker run --rm multiarch-dockerfile:amd64-methoda ls -la /usr/bin/wget
 -rwxr-xr-x 1 root root 454176 Jan 13  2015 /usr/bin/wget
 ```
 
@@ -61,7 +61,7 @@ for arch in amd64 armhf powerpc; do                     \
           fi;                                        \
         done
 sed -i 's/#[[:space:]]*arch=armhf//g' Dockerfile
-cat Dockerfile
+$ cat Dockerfile
 FROM multiarch/ubuntu-debootstrap:armhf-wily
 
 RUN apt-get update && apt-get install --no-install-recommends -y -q wget
@@ -69,7 +69,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y -q wget
 RUN echo "I'm arhmf"
 
 CMD ["uname -a; cowsay hello world"]
-docker build --no-cache -t multiarch-dockerfile:armhf-methoda .
+$ docker build --no-cache -t multiarch-dockerfile:armhf-methoda .
 Sending build context to Docker daemon 6.656 kB
 Step 1 : FROM multiarch/ubuntu-debootstrap:armhf-wily
  ---> aeed111b7935
@@ -92,9 +92,9 @@ Step 4 : CMD uname -a; cowsay hello world
  ---> db845e4af8b2
 Removing intermediate container bce7c33bbf75
 Successfully built db845e4af8b2
-docker run --rm multiarch-dockerfile:armhf-methoda uname -a
+$ docker run --rm multiarch-dockerfile:armhf-methoda uname -a
 Linux 23e2322fe295 3.13.0-36-generic #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014 armv7l armv7l armv7l GNU/Linux
-docker run --rm multiarch-dockerfile:armhf-methoda ls -la /usr/bin/wget
+$ docker run --rm multiarch-dockerfile:armhf-methoda ls -la /usr/bin/wget
 -rwxr-xr-x 1 root root 330100 Jan 13  2015 /usr/bin/wget
 ```
 
@@ -107,7 +107,7 @@ for arch in amd64 armhf powerpc; do                     \
           fi;                                        \
         done
 sed -i 's/#[[:space:]]*arch=powerpc//g' Dockerfile
-cat Dockerfile
+$ cat Dockerfile
 FROM multiarch/ubuntu-debootstrap:powerpc-wily
 
 RUN apt-get update && apt-get install --no-install-recommends -y -q wget
@@ -115,7 +115,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y -q wget
 RUN echo "I'm powerpc"
 
 CMD ["uname -a; cowsay hello world"]
-docker build --no-cache -t multiarch-dockerfile:powerpc-methoda .
+$ docker build --no-cache -t multiarch-dockerfile:powerpc-methoda .
 Sending build context to Docker daemon 6.656 kB
 Step 1 : FROM multiarch/ubuntu-debootstrap:powerpc-wily
  ---> 6c3238952754
@@ -138,8 +138,8 @@ Step 4 : CMD uname -a; cowsay hello world
  ---> 8a9c68c82f62
 Removing intermediate container 7de1b74b25f3
 Successfully built 8a9c68c82f62
-docker run --rm multiarch-dockerfile:powerpc-methoda uname -a
+$ docker run --rm multiarch-dockerfile:powerpc-methoda uname -a
 Linux 11e656b836bc 3.13.0-36-generic #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014 ppc ppc ppc GNU/Linux
-docker run --rm multiarch-dockerfile:powerpc-methoda ls -la /usr/bin/wget
+$ docker run --rm multiarch-dockerfile:powerpc-methoda ls -la /usr/bin/wget
 -rwxr-xr-x 1 root root 481776 Jan 13  2015 /usr/bin/wget
 ```
