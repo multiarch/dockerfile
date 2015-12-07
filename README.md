@@ -40,3 +40,19 @@ Pros
 Cons
 * May be difficult (or impossible) to write "multiarch" Dockerfile (sometimes, we need to replace with `armhf`, sometimes with `armv7l`, sometimes with `arm`, ...)
 * Need to copy the whole workspace for each arch on build (take more disk space)
+* Bad multiline support
+
+
+---
+
+## method E
+
+A mix between `method A` and `method C`
+
+Pros
+* Unique `Dockerfile`
+* The `Dockerfile` is written for `amd64` and works out of the box without the Makefile
+
+Cons
+* Need to copy the whole workspace for each arch on build (take more disk space)
+* Bad multiline support
