@@ -3,7 +3,19 @@ Multiarch Dockerfile POC
 
 ## method A
 
+Pros
+* Unique Dockerfile
+
+Cons
+* Don't work out of the box (`docker build` without `Makefile`)
+* May be harder to read
+* Bad multiline support
+
+---
+
 ## method B
+
+---
 
 ## method C
 
@@ -14,7 +26,9 @@ Multiarch Dockerfile POC
   * copy `Dockerfile` if `TARGET` is `amd64`, else it will replace all occurences of `amd64` with `$(TARGET)`
 
 Pros
-* The Dockerfile works out of the box without our Makefile system
+* Unique Dockerfile
+* The Dockerfile works out of the box without our Makefile system (`docker build`)
 
 Cons
 * May be difficult (or impossible) to write "multiarch" Dockerfile (sometimes, we need to replace with `armhf`, sometimes with `armv7l`, sometimes with `arm`, ...)
+* Need to copy the whole workspace for each arch on build (take more disk space)
