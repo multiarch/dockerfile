@@ -1,8 +1,11 @@
-ARG "REGISTRY=multiarch/ubuntu-debootstrap ARCH=amd64"
+FROM scratch
+ARG FROM_IMAGE=multiarch/ubuntu-debootstrap:amd64-wily
+ARG ARCH=amd64
 #
 # We need to patch docker to handle ARG before FROM
 #
-FROM ${REGISTRY}:${ARCH}-wily
+FROM ${FROM_IMAGE}
+
 
 RUN apt-get update \
  && apt-get install --no-install-recommends -y -q wget
