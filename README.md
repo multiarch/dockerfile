@@ -13,4 +13,10 @@ Dockerfile is easily readable                  |   | x | x |   | x | x | x | x
 Disk-friendly (do not create tmp context dir)  | x | x |   |   |   | x |   | x
 Does not need to patch Docker                  | x | x | x | x | x |   | x |
                                                |   |   |   |   |   |   |   |
-*Votes*                                        |   |   |   |   | 1 |   | 3 | 3
+*Votes*                                        |   |   |   |   |0.5|   |1.5| 3
+
+---
+
+Vote scoring (per person):
+* First choice: 1 vote
+* Secondary choice(s): 0.5 vote 
