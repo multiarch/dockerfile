@@ -12,3 +12,5 @@ Gentle multiline support                       |   |   |   |   |   | x | x | x
 Dockerfile is easily readable                  |   | x | x |   | x | x | x | x
 Disk-friendly (do not create tmp context dir)  | x | x |   |   |   | x |   | x
 Does not need to patch Docker                  | x | x | x | x | x |   | x |
+                                               |   |   |   |   |   |   |   |
+*Votes*                                        |   |   |   |   | 1 |   | 3 | 3
