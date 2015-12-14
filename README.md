@@ -3,6 +3,10 @@ Multiarch Dockerfile POC
 
 ---
 
+**Update**: method G is now successfully implemented here: https://github.com/scaleway/image-ubuntu/tree/master/15.10, we now hope the method H to be possible soon, so we can switch again
+
+---
+
                                                | A | B | C | D | E | F | G | H
 -----------------------------------------------|---|---|---|---|---|---|---|---
 Unique Dockerfile                              | x |   | x |   | x | x | x | x
