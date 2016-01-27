@@ -1,6 +1,8 @@
 # dockerfile
 Multiarch Dockerfile POC
 
+![](https://raw.githubusercontent.com/multiarch/dockerfile/master/logo.jpg)
+
 ---
 
 **Update**: method G is now successfully implemented here: https://github.com/scaleway/image-ubuntu/tree/master/15.10, we now hope the method H to be possible soon, so we can switch again
